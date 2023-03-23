@@ -1,12 +1,12 @@
 package ru.ms.stu.gamescore
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcelable
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.parcel.Parcelize
 import ru.ms.stu.gamescore.databinding.ActivityMainBinding
 
+@Suppress("DEPRECATION", "DEPRECATED_ANNOTATION")
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var state: State
@@ -31,14 +31,14 @@ class MainActivity : AppCompatActivity() {
     }
     private fun changeScore() {
         with(binding) {
-            src1.setOnClickListener(View.OnClickListener {
+            src1.setOnClickListener {
                 ++state.score1
                 visualization()
-            })
-            src2.setOnClickListener(View.OnClickListener {
+            }
+            src2.setOnClickListener {
                 ++state.score2
                 visualization()
-            })
+            }
         }
     }
     private fun visualization() {
